@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+   
+         <title> Cricket Score Board </title>
+         <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+   
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		 
+		 <style>
+		 
+		     .display-inline-block {
+			        display:inline-block;    
+			 }
+		 
+		     .center {
+			        width: 50%;
+					margin: 0 auto;
+					position: absolute;
+					top: 30%;
+					left: 25%;
+					text-align:center;
+					height:150px;
+			 }
+			 
+			 .center .display-inline-block.elemt-hover {
+			        transition:all 0.5s cubic-bezier(0,-0.01,0,.99);
+					animation-fill-mode: forwards;
+			 }
+			 
+			 .center .display-inline-block.elemt-hover:hover i{
+					font-size: 65px;
+			 }
+			 
+			 /*.center .display-inline-block.elemt-next-hover:hover i, .center .display-inline-block.elemt-prev-hover:hover i{
+					font-size: 50px;
+					transition:all 0.5s ease;
+			 }*/
+			 
+			 /* .center .display-inline-block.elemt-hover + .display-inline-block, .center .display-inline-block.elemt-hover ~ .display-inline-block:first-of-type,*/
+			 .elemt-prev-hover i, .elemt-next-hover i {
+			        font-size: 40px !important;
+					transition:all 0.5s cubic-bezier(0,-0.01,0,.99);
+					animation-fill-mode: forwards;
+			 }
+			 
+			 
+			 
+			 .icon-wrapper {
+			        position:absolute;
+                    bottom:0px;
+                    left:10%;
+                    cursor:pointer;					
+			 }
+		 
+		     .icon-wrapper .display-inline-block{
+			        margin-left:0px;
+					padding: 12px;
+					
+					border-radius: 50%;
+			 }
+			 
+			 .icon-wrapper .display-inline-block i {
+			         font-size:25px;
+			 }
+			 
+			 .icon-wrapper .display-inline-block:nth-child(1){
+			         background-color: #ec5353;
+			 }
+			 
+			 .icon-wrapper .display-inline-block:nth-child(2){
+			         background-color: #f0f360;
+			 }
+			 
+			 .icon-wrapper .display-inline-block:nth-child(3){
+			         background-color: #60e5f3;
+			 }
+			 
+			 .icon-wrapper .display-inline-block:nth-child(4){
+			         background-color: #79f759;
+			 }
+			 
+			 .icon-wrapper .display-inline-block:nth-child(5){
+			         background-color: #606bf3;
+			 }
+			 
+			 .icon-wrapper .display-inline-block:nth-child(6){
+			         background-color: #fd6ae4;
+			 }
+		 
+		 </style>
+   
+   </head>
+   
+   <body>
+   
+         
+		 
+		 <div class="center">
+		 
+		  <div class="icon-wrapper">
+		     <div class="display-inline-block"> <i class="fa fa-address-book" aria-hidden="true"></i> </div> 
+             <div class="display-inline-block"> <i class="fa fa-bath" aria-hidden="true"></i> </div>
+             <div class="display-inline-block"> <i class="fa fa-free-code-camp" aria-hidden="true"></i> </div>
+             <div class="display-inline-block"> <i class="fa fa-grav" aria-hidden="true"></i> </div>
+             <div class="display-inline-block"> <i class="fa fa-telegram" aria-hidden="true"></i> </div>			 
+             <div class="display-inline-block"> <i class="fa fa-window-restore" aria-hidden="true"></i> </div>			 
+		 </div> 
+		  
+		 </div>
+		 
+		 <script>
+		 
+		      $(document).ready(function(){
+			  
+			         $('.display-inline-block').hover(function(){
+					 
+					     $(this).addClass('elemt-hover');
+						 $(this).siblings().removeClass('elemt-hover', 50);
+						 $(this).prev().addClass('elemt-prev-hover', 50);
+						 $(this).next().addClass('elemt-next-hover', 50);
+						 
+					 });
+					 
+					 $('.display-inline-block').mouseleave(function(){
+					 
+					     $(this).removeClass('elemt-hover');
+						 $(this).prev().removeClass('elemt-prev-hover', 50);
+						 $(this).next().removeClass('elemt-next-hover', 50);
+						 
+					 });
+			  
+			  });
+		 
+		 </script>
+   
+   </body>
+ 
+</html>
